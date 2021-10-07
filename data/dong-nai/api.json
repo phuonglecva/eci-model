@@ -1,0 +1,695 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "economy-forecast API",
+    "version": "v1"
+  },
+  "host": "18.140.50.86",
+  "basePath": "/api/v1/dong-nai/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/cpies": {
+      "get": {
+        "description": "Retrieve all cpies from 1/2018 - 12/2020",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "data": {
+                  "cpi": [
+                    {
+                      "name": "Chỉ số giá tiêu dùng chung",
+                      "val": [
+                        102.48,
+                        103.21,
+                        103.39
+                      ]
+                    },
+                    {
+                      "name": "Lương thực",
+                      "val": [
+                        106.83,
+                        105.91,
+                        105.28
+                      ]
+                    }
+                  ],
+                  "timeline": [
+                    "2020-05",
+                    "2020-06",
+                    "2020-07"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cpies/{cpi_id}": {
+      "get": {
+        "description": "Retrieve a specific cpi id",
+        "parameters": [
+          {
+            "name": "cpi_id",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "data": {
+                  "sub": {
+                    "name": "Giao thông",
+                    "val": [
+                      75.04,
+                      81.34,
+                      84.79
+                    ]
+                  },
+                  "timeline": [
+                    "2020-05",
+                    "2020-06",
+                    "2020-07"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/iips": {
+      "get": {
+        "description": "Retrieve all iips data from 1/2018 to 12/2020",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "value": {
+                  "data": {
+                    "timeline": [
+                      "2020-07",
+                      "2020-08",
+                      "2020-09"
+                    ],
+                    "iip": [
+                      10.86,
+                      9.28,
+                      9.47
+                    ],
+                    "subs": [
+                      {
+                        "name": "Công nghiệp khai thác mỏ",
+                        "value": [
+                          11.85,
+                          10.71,
+                          7.3
+                        ]
+                      },
+                      {
+                        "name": "Cung cấp nước, quản lý và xử lý nước thải, rác thải",
+                        "value": [
+                          4.58,
+                          12.22,
+                          13.57
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/iips/{iip_id}": {
+      "get": {
+        "description": "Retrieve a specific iip id",
+        "parameters": [
+          {
+            "name": "iip_id",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "value": {
+                  "data": {
+                    "subs": [
+                      {
+                        "name": "Công nghiệp khai thác mỏ",
+                        "value": [
+                          11.85,
+                          10.71,
+                          7.3
+                        ]
+                      }
+                    ],
+                    "timeline": [
+                      "2020-07",
+                      "2020-08",
+                      "2020-09"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gpds": {
+      "get": {
+        "description": "Retrieve all gdp  data from 2010 to 2019",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "value": {
+                  "data": {
+                    "rates": [
+                      100,
+                      107.45,
+                      107.57,
+                      107.57,
+                      108.42,
+                      108.97,
+                      107.41,
+                      107.42,
+                      108.72,
+                      109.09
+                    ],
+                    "value_unit": "ty dong",
+                    "values": [
+                      102002.3,
+                      109602.2,
+                      117897.3,
+                      126828,
+                      137510.6,
+                      149851,
+                      160958.2,
+                      172894.4,
+                      187969,
+                      205057.7
+                    ],
+                    "year": [
+                      2010,
+                      2011,
+                      2012,
+                      2013,
+                      2014,
+                      2015,
+                      2016,
+                      2017,
+                      2018,
+                      2019
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/thuchi": {
+      "get": {
+        "description": "Retrieve all thu chi ngan sach data from 12/2017 to 11/2020",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "data": {
+                  "thu chi ngan sach": {
+                    "Chi ngan sach": {
+                      "Chi thường xuyên": [
+                        1484,
+                        0,
+                        0
+                      ],
+                      "Chi đầu tư phát triển (tỷ đồng)": [
+                        680.5,
+                        0,
+                        0
+                      ],
+                      "Tổng chi (tỷ đồng)": [
+                        2164.4,
+                        1450,
+                        0
+                      ]
+                    },
+                    "Thu ngan sach": {
+                      "Thu lĩnh vực XNK( tỷ đồng)": [
+                        2499.8,
+                        0,
+                        0
+                      ],
+                      "Thu nội địa (tỷ đồng)": [
+                        3995.5,
+                        0,
+                        33588.2
+                      ],
+                      "Tổng thu (tỷ đồng)": [
+                        6495.2,
+                        4250,
+                        48795.9
+                      ]
+                    }
+                  },
+                  "timeline": [
+                    "Thu, 01 Feb 2018 00:00:00 GMT",
+                    "Mon, 01 Jan 2018 00:00:00 GMT",
+                    "Fri, 01 Dec 2017 00:00:00 GMT"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xnk": {
+      "get": {
+        "description": "Retrieve all xuat nhap khau data from 7/2018 to 5/2021",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "data": {
+                  "nhapkhau": [
+                    {
+                      "name": "Kim ngạch tháng hiện tại",
+                      "rate": [
+                        8.4,
+                        4.4,
+                        2.5
+                      ],
+                      "val": [
+                        1403.2,
+                        1455.6,
+                        1415.5
+                      ]
+                    },
+                    {
+                      "name": "Tính chung từ đầu năm",
+                      "rate": [
+                        10.5,
+                        10.54,
+                        0.1
+                      ],
+                      "val": [
+                        13176,
+                        14620.7,
+                        15961.9
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế nhà nước",
+                      "rate": [
+                        11.8,
+                        12.4,
+                        4.4
+                      ],
+                      "val": [
+                        97.3,
+                        106.8,
+                        117
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế ngoài nhà nước",
+                      "rate": [
+                        18.6,
+                        20.2,
+                        16
+                      ],
+                      "val": [
+                        1838.7,
+                        2041.4,
+                        2213.4
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế có vốn đầu tư nước ngoài",
+                      "rate": [
+                        9.3,
+                        9.1,
+                        9.1
+                      ],
+                      "val": [
+                        1124,
+                        12472.4,
+                        13631.5
+                      ]
+                    }
+                  ],
+                  "xuatkhau": [
+                    {
+                      "name": "Kim ngạch tháng hiện tại",
+                      "rate": [
+                        9.5,
+                        6.74,
+                        0.7
+                      ],
+                      "val": [
+                        1598.4,
+                        1599.2,
+                        1736
+                      ]
+                    },
+                    {
+                      "name": "Tính chung từ đầu năm",
+                      "rate": [
+                        11.4,
+                        10.7,
+                        11.85
+                      ],
+                      "val": [
+                        15275.8,
+                        16773.6,
+                        18633.7
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế nhà nước",
+                      "rate": [
+                        6.8,
+                        6.9,
+                        0.07
+                      ],
+                      "val": [
+                        185.4,
+                        205.7,
+                        226.9
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế ngoài nhà nước",
+                      "rate": [
+                        16.5,
+                        19.5,
+                        20.8
+                      ],
+                      "val": [
+                        2056.4,
+                        2276.5,
+                        2543.4
+                      ]
+                    },
+                    {
+                      "name": "Kinh tế có vốn đầu tư nước ngoài",
+                      "rate": [
+                        10.7,
+                        9.5,
+                        10.6
+                      ],
+                      "val": [
+                        13034.1,
+                        14291.5,
+                        15863.3
+                      ]
+                    }
+                  ],
+                  "years": [
+                    "05-2021",
+                    "04-2021",
+                    "03-2021"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unemployment": {
+      "get": {
+        "description": "Retrieve all unemployment data from 2011 to 2019",
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "data": {
+                  "timeline": [
+                    2011,
+                    2012,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                  ],
+                  "unemployment": {
+                    "Tỷ lệ thất nghiệp trong độ tuổi lao động": {
+                      "Nong thon": {
+                        "chung": [
+                          1.13,
+                          1.84,
+                          1.42,
+                          1.68,
+                          2.26,
+                          2.13,
+                          2.38,
+                          2.13,
+                          1.45
+                        ],
+                        "nam": [
+                          1.12,
+                          1.82,
+                          1.45,
+                          1.73,
+                          1.79,
+                          2.48,
+                          2.06,
+                          2.08,
+                          1.6
+                        ],
+                        "nu": [
+                          1.15,
+                          1.87,
+                          1.38,
+                          1.62,
+                          2.83,
+                          1.7,
+                          2.76,
+                          2.18,
+                          1.26
+                        ]
+                      },
+                      "Thanh thi": {
+                        "chung": [
+                          1.97,
+                          1.42,
+                          2.35,
+                          2.11,
+                          3.46,
+                          2.34,
+                          2.44,
+                          3.65,
+                          1.98
+                        ],
+                        "nam": [
+                          2.02,
+                          1.71,
+                          2.67,
+                          1.84,
+                          3.41,
+                          2.11,
+                          2.32,
+                          3.31,
+                          1.92
+                        ],
+                        "nu": [
+                          1.92,
+                          1.1,
+                          2.01,
+                          2.42,
+                          3.51,
+                          2.59,
+                          2.58,
+                          4.05,
+                          2.06
+                        ]
+                      },
+                      "Tong so": {
+                        "chung": [
+                          1.41,
+                          1.7,
+                          1.73,
+                          1.82,
+                          2.67,
+                          2.2,
+                          2.4,
+                          2.65,
+                          1.62
+                        ],
+                        "nam": [
+                          1.41,
+                          1.78,
+                          1.84,
+                          1.77,
+                          2.33,
+                          2.36,
+                          2.15,
+                          2.49,
+                          1.7
+                        ],
+                        "nu": [
+                          1.41,
+                          1.61,
+                          1.6,
+                          1.88,
+                          3.06,
+                          2.01,
+                          2.7,
+                          2.83,
+                          1.52
+                        ]
+                      }
+                    },
+                    "Tỷ lệ thất nghiệp từ 15 tuổi trở lên": {
+                      "Nong thon": {
+                        "chung": [
+                          1.03,
+                          1.69,
+                          1.28,
+                          1.5,
+                          2.14,
+                          2.04,
+                          2.14,
+                          2,
+                          1.45
+                        ],
+                        "nam": [
+                          1.05,
+                          1.71,
+                          1.35,
+                          1.6,
+                          1.73,
+                          2.34,
+                          1.91,
+                          2.05,
+                          1.59
+                        ],
+                        "nu": [
+                          1.02,
+                          1.66,
+                          1.21,
+                          1.39,
+                          2.6,
+                          1.69,
+                          2.39,
+                          1.93,
+                          1.26
+                        ]
+                      },
+                      "Thanh thi": {
+                        "chung": [
+                          1.91,
+                          1.35,
+                          2.2,
+                          1.95,
+                          3.28,
+                          2.17,
+                          2.33,
+                          3.58,
+                          1.95
+                        ],
+                        "nam": [
+                          2.01,
+                          1.64,
+                          2.54,
+                          1.74,
+                          3.29,
+                          2.01,
+                          2.34,
+                          3.42,
+                          1.93
+                        ],
+                        "nu": [
+                          1.81,
+                          1.05,
+                          1.84,
+                          2.18,
+                          3.27,
+                          2.33,
+                          2.32,
+                          3.76,
+                          1.97
+                        ]
+                      },
+                      "Tong so": {
+                        "chung": [
+                          1.32,
+                          1.58,
+                          1.58,
+                          1.64,
+                          2.52,
+                          2.08,
+                          2.21,
+                          2.54,
+                          1.6
+                        ],
+                        "nam": [
+                          1.35,
+                          1.69,
+                          1.73,
+                          1.65,
+                          2.24,
+                          2.23,
+                          2.06,
+                          2.51,
+                          1.69
+                        ],
+                        "nu": [
+                          1.28,
+                          1.46,
+                          1.43,
+                          1.63,
+                          2.83,
+                          1.91,
+                          2.37,
+                          2.57,
+                          1.49
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
